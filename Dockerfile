@@ -5,6 +5,9 @@ FROM debian:buster-20211115
 # Change logs here: https://packages.debian.org/buster/texlive-full
 RUN apt-get update -qq && apt-get install -qy texlive-full
 
+# 添加国内镜像源
+COPY .docker/sources_cn.list /etc/apt/sources.list
+
 RUN set -ex \
     && apt-get update -qq \
     && apt-get install -qy \

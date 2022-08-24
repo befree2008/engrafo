@@ -5,7 +5,7 @@ module.exports = function (document) {
       figure.children.length > 0 &&
       figure.children[0].tagName == "FIGCAPTION"
     ) {
-      figure.appendChild(figure.children[0]);
+      figure.appendChild(figure.children[0])
     }
-  });
-};
+  })
+}
