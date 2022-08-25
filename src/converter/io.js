@@ -194,7 +194,7 @@ async function pickLatexFile(dir) {
   if (bblCandidates.length > 1) {
     throw new Error(`Ambiguous LaTeX path (${bblCandidates.length} candidates)`)
   }
-  return bblCandidates[0]
+  return path.join(dir, bblCandidates[0])
 }
 
 module.exports = {

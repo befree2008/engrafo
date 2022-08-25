@@ -1,12 +1,12 @@
 # Version from https://hub.docker.com/_/debian/
 FROM debian:buster-20211115
 
+# 添加国内镜像源
+COPY .docker/sources_cn.list /etc/apt/sources.list
+
 # LaTeX stuff first, because it's enormous and doesn't change much
 # Change logs here: https://packages.debian.org/buster/texlive-full
 RUN apt-get update -qq && apt-get install -qy texlive-full
-
-# 添加国内镜像源
-COPY .docker/sources_cn.list /etc/apt/sources.list
 
 RUN set -ex \
     && apt-get update -qq \
